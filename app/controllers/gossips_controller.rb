@@ -7,6 +7,8 @@ class GossipsController < ApplicationController
   def show
   	@gossip = Gossip.find(params[:id])
   end
+#/ exo 2.2.1 Hot Gossip 
+#/ on attribue un numéro à chaque instance de Gossip
 
   def new 
   	@gossip = Gossip.new
@@ -21,5 +23,19 @@ class GossipsController < ApplicationController
       render "new"
     end
   end
+
+  def edit
+  	@gossip = Gossip.find(params[:id])
+  end
+
+	def update
+	  @gossip = Gossip.find(params[:id])
+	  gossip_params = params.permit(:title, :content)
+	  if @gossip.update(gossip_params)
+	    redirect_to @gossip
+	  else
+	    render :edit
+	  end
+	end
 
 end

@@ -1,7 +1,26 @@
 
-<h1>Gossip numéro <%= @gossip_number %> </h1>
+
+
+<div class="card-body text-info">
+  <div class="card-header">
+	<h1> Gossip numéro <%=params[:id]%></h1>
+</div>
+
 <h3> <%= @gossip.user.first_name %> <%= @gossip.user.last_name %> </h3>
-<p><%= link_to "Author profile", user_path(@gossip.user.id) %></p>
+
 <h3> <%= @gossip.title %> </h3>
+
 <p> <%= @gossip.content %> </p>
+
 <p> Date de création : <%= @gossip.created_at.strftime("%d/%m/%Y") %> </p>
+
+
+<p><%= link_to "User profile", user_path(@gossip.user.id) %></p>
+
+<p><%= link_to "City", city_path(@gossip.user.city.id) %></p>
+
+
+<p class="text-right text-muted">
+<i class="fas fa-edit"></i> <%= link_to "Éditer le potin", edit_gossip_path(params[:id]) %>
+ </div>
+  </div>
