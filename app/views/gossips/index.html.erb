@@ -1,0 +1,45 @@
+
+
+<% if flash[:notice] %>
+  <div class="alert alert-success" role="alert">
+   <div class="notice"> 
+     <%=flash[:notice] %> 
+     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+       <span aria-hidden="true">&times;</span>
+     </button>
+   </div>
+  </div>
+<% end %> 
+
+<div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Hello <%=@first_name%> to the Gossip World!</h1>
+          <p> Voici notre site de petits (po)potins ! On est ici pour bitcher car on adore bitcher !! </p>
+          <p><a class="btn btn-primary btn-lg" href="<%= team_path%>" role="button">Learn more on the creators »</a></p>
+        </div>
+      </div>
+
+
+<p>Pour ajouter un potin clique ici : <%= link_to "Ajouter un potin", new_gossip_path,:class => "btn-danger btn p-1"%></p>
+
+<div class="row mb-2">
+   <% @gossip_all.each_with_index do |potin, i| %>
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-primary"><%= potin.title %></strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="#">Featured post</a>
+              </h3>
+              <div class="mb-1 text-muted"><%= potin.user.first_name %></div>
+              <p class="card-text mb-auto"><%= potin.content %></p>
+              <a href="gossips/<%= i+1%>" class="card-link"> Pour en savoir plus...</a>
+            </div><!-- 
+            <img class="card-img-right flex-auto d-none d-md-block"data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" style="width: 200px; height: 250px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22200%22%20height%3D%22250%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20250%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_168c26b30e1%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A13pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_168c26b30e1%22%3E%3Crect%20width%3D%22200%22%20height%3D%22250%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2255%22%20y%3D%22131%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true"> -->
+          </div>
+        </div>
+<% end %>
+
+<footer class="container">
+      <p>© Company The Gossip Project 2019 - Made with ♥ by Grégo et Apouille </p>
+    </footer>
