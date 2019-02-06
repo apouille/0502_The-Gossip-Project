@@ -14,6 +14,10 @@ class GossipsController < ApplicationController
   	@gossip = Gossip.new
   end
 
+  def edit
+  	@gossip = Gossip.find(params[:id])
+  end
+
   def create
   	@gossip = Gossip.new(title: params[:title], content: params[:content], user_id: 2)
     if @gossip.save
@@ -24,10 +28,6 @@ class GossipsController < ApplicationController
     end
   end
 
-  def edit
-  	@gossip = Gossip.find(params[:id])
-  end
-
 	def update
 	  @gossip = Gossip.find(params[:id])
 	  gossip_params = params.permit(:title, :content)
@@ -36,6 +36,14 @@ class GossipsController < ApplicationController
 	  else
 	    render :edit
 	  end
+	end
+
+	def destroy
+		@gossip = Gossip.find(params[:id])
+		@gossip.destroy
+
+		 flash[:notice] = "Vous avez supprimé un potin avec succès"
+		redirect_to root_path
 	end
 
 end
