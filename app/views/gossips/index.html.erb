@@ -27,9 +27,8 @@
         <div class="col-md-6">
           <div class="card flex-md-row mb-4 box-shadow h-md-250">
             <div class="card-body d-flex flex-column align-items-start">
-              <strong class="d-inline-block mb-2 text-primary"><%= potin.title %></strong>
               <h3 class="mb-0">
-                <a class="text-dark" href="#">Featured post</a>
+                <a class="text-dark"><%= potin.title %></a>
               </h3>
               <div class="mb-1 text-muted"><%= potin.user.first_name %></div>
               <p class="card-text mb-auto"><%= potin.content %></p>
@@ -40,6 +39,7 @@
         </div>
 <% end %>
 
-<footer class="container">
-      <p>© Company The Gossip Project 2019 - Made with ♥ by Grégo et Apouille </p>
-    </footer>
+
+<p class="float-left">
+    Fait avec <i class="fa fa-heart"></i> par Grégo et Apouille, 2019.
+  </p>
