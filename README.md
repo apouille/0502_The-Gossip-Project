@@ -1,24 +1,22 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##  :gem: Project Title - RAILS/THE GOSSIP PROJECT
 
-Things you may want to cover:
+Holà Correctorios! Voici mon Gossip Project !
 
-* Ruby version
+<p align="center">
+  <img width="460" height="300" src="https://media.giphy.com/media/SqKceTiTs99y8/giphy.gif">
+</p>
 
-* System dependencies
 
-* Configuration
+##   :fireworks: How does it work ?
 
-* Database creation
+Voici le lien du site Heroku :  
 
-* Database initialization
+```
+https://hello-gossips-world.herokuapp.com/
+```
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## :heart: Built by : 
 
-* Deployment instructions
-
-* ...
+Mélanie Nguon  
