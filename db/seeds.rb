@@ -16,12 +16,13 @@ Tag.destroy_all
 JoinTableTagGossip.destroy_all
 Message.destroy_all
 
+
 10.times do
  city = City.create(name: Faker::Address.city, zip_code: Faker::Address.zip_code)
 end
 
 10.times do
- user = User.create(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name, description: Faker::Friends.quote, email: Faker::Internet.email, age: Faker::Number.number(2), city: City.all.sample)
+ user = User.create(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name, description: Faker::Friends.quote, email: Faker::Internet.email, age: Faker::Number.number(2), city: City.all.sample, password: Faker::Lorem.word)
 end
 
 20.times do
@@ -29,11 +30,11 @@ end
 end
 
 10.times do
- tag = Tag.create(title: Faker::Ancient.hero)
+tag = Tag.create(title: Faker::Ancient.hero)
 end
 
 10.times do
- join_table_tag_gossip = JoinTableTagGossip.create(gossip: Gossip.all.sample, tag: Tag.all.sample)
+join_table_tag_gossip = JoinTableTagGossip.create(gossip: Gossip.all.sample, tag: Tag.all.sample)
 end
 
 5.times do

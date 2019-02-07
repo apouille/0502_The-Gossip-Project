@@ -3,6 +3,7 @@ class User < ApplicationRecord
 	has_many :gossips, dependent: :destroy
 	has_many :sent_messages, foreign_key: 'sender_id', class_name: "Message", dependent: :destroy
 	has_many :received_messages, foreign_key: 'recipient_id', class_name: "Message", dependent: :destroy
+  has_secure_password
 
 	validates :first_name,
 	presence: true
@@ -20,5 +21,8 @@ class User < ApplicationRecord
 
   validates :description,
   presence: true
-   
+
+  validates :password_digest,
+  presence: true,
+	length: {minimum: 6}
 end

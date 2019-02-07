@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 		resources :gossips
 		resources :users
 	  resources :cities
-
+		resources :sessions, only: [:new, :create, :destroy]
 		root 'gossips#index'
     get '/team', to: 'static_pages#team'
     get '/contact', to: 'static_pages#contact'

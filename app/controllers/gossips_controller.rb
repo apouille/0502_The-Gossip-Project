@@ -19,7 +19,7 @@ class GossipsController < ApplicationController
   end
 
   def create
-  	@gossip = Gossip.new(title: params[:title], content: params[:content], user_id: 2)
+  	@gossip = Gossip.new(title: params[:title], content: params[:content], user_id: User.all.sample.id)
     if @gossip.save
       flash[:notice] = "Vous avez crée un potin avec succès"
       redirect_to root_path
@@ -40,9 +40,15 @@ class GossipsController < ApplicationController
 
 	def destroy
 		@gossip = Gossip.find(params[:id])
+    puts "*"*50
+    puts @gossip.id
+    puts "*"*50   
 		@gossip.destroy
 
-		 flash[:notice] = "Vous avez supprimé un potin avec succès"
+
+		# if gossip.destroy
+      flash[:notice] = "Vous avez supprimé un potin avec succès"
+    # else
 		redirect_to root_path
 	end
 

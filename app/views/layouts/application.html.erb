@@ -29,7 +29,7 @@
    <span class="navbar-toggler-icon"></span>
  </button>
  <div class="collapse navbar-collapse" id="navbarNav">
-   <ul class="navbar-nav">
+   <ul class="navbar-nav navbar-nav-scroll">
      <li class="nav-item active">
        <a class="nav-link" href="<%= team_path%>"> Team </a>
      </li>
@@ -40,6 +40,9 @@
        <a class="nav-link" href="<%= new_gossip_path%>">Créer un gossip </a>
      </li>    
    </ul>
+  <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+       <a class="nav-link" href="<%= sessions_path%>"> Se connecter </a>
+     </ul>    
  </div>
 </nav>
 
