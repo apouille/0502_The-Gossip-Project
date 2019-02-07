@@ -29,13 +29,13 @@ end
  gossip = Gossip.create(title: Faker::Lorem.word, content: Faker::FamousLastWords.last_words, user: User.all.sample)
 end
 
-10.times do
-tag = Tag.create(title: Faker::Ancient.hero)
-end
+# 10.times do
+# tag = Tag.create(title: Faker::Ancient.hero)
+# end
 
-10.times do
-join_table_tag_gossip = JoinTableTagGossip.create(gossip: Gossip.all.sample, tag: Tag.all.sample)
-end
+# 10.times do
+# join_table_tag_gossip = JoinTableTagGossip.create(gossip: Gossip.all.sample, tag: Tag.all.sample)
+# end
 
 5.times do
  message = Message.create(content: Faker::FamousLastWords.last_words, recipient: User.all.sample, sender: User.all.sample)
