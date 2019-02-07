@@ -1,0 +1,39 @@
+
+
+    <%= form_tag url_for(action: 'create'), method: "post" do %>
+
+      <%= label_tag 'Prénom' %>
+      <%= text_field_tag 'first_name', '', :class => "form-control", placeholder: "Prénom"%> <br /> <br />
+
+
+      <%= label_tag 'Nom' %>
+      <%= text_area_tag 'last_name', '', :class => "form-control", placeholder: "Nom"%>
+      <br /> <br />
+
+
+      <%= label_tag 'Description' %>
+      <%= text_area_tag 'description', '', :class => "form-control", placeholder: "Description"%>
+      <br /> <br />
+
+
+      <%= label_tag 'Email' %>
+      <%= text_area_tag 'email', '', :class => "form-control", placeholder: "Email"%>
+      <br /> <br />
+
+      <%= label_tag 'Age' %>
+      <%= text_area_tag 'age', '', :class => "form-control", placeholder: "Age"%>
+      <br /> <br />
+
+
+      <%= label_tag 'City' %>
+      <%= text_area_tag 'city', '', :class => "form-control", placeholder: "City"%>
+      <br /> <br />
+
+
+      <%= label_tag 'Password' %>
+      <%= text_area_tag 'password', '', :class => "form-control", placeholder: "Password"%>
+      <br /> <br />
+
+      <%= submit_tag "Create Profile" %>
+
+    <% end %>

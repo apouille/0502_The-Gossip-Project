@@ -13,7 +13,11 @@
 
 <div class="jumbotron">
         <div class="container">
-          <h1 class="display-3">Hello <%=@first_name%> to the Gossip World!</h1>
+<!-- si quelqu'un est connecté -->
+          <% if session[:user_id]!=nil%> 
+          <h1 class="display-3">Hello <%= User.find_by(id: session[:user_id]).first_name %> </h1>
+          <%end%>
+          <h1> Welcome to the Gossip World!</h1>
           <p> Voici notre site de petits (po)potins ! On est ici pour bitcher car on adore bitcher !! </p>
           <p><a class="btn btn-primary btn-lg" href="<%= team_path%>" role="button">Learn more on the creators »</a></p>
         </div>
@@ -41,5 +45,5 @@
 
 
 <p class="float-left">
-    Fait avec <i class="fa fa-heart"></i> par Grégo et Apouille, 2019.
+    Fait avec <i class="fa fa-heart"></i> par Apouille, 2019.
   </p>

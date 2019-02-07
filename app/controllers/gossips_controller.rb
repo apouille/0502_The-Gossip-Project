@@ -26,7 +26,16 @@ class GossipsController < ApplicationController
     else
       render "new"
     end
-  end
+
+    @gossip = Gossip.create(params[:id])
+    @gossip.user = User.find_by(id: session[:user_id])
+    if @gossip.save
+      flash[:success] = "Potin bien créé !"
+      redirect_to root_path
+    else
+      render new
+    end
+end
 
 	def update
 	  @gossip = Gossip.find(params[:id])
