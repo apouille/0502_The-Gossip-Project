@@ -21,7 +21,9 @@
 
 
 <p class="text-right text-muted">
-<i class="fas fa-edit"></i> <%= link_to "Éditer le potin", edit_gossip_path(params[:id]) %>
-	<%= link_to "Supprimer le gossip", gossip_path(@gossip.id), method: "delete", class: "btn btn-danger", data: { confirm: "Souhaitez-vous vraiment supprimer ce gossip?"}%>
+<i class="fas fa-edit"></i> 
+<%= link_to "Éditer le potin", edit_gossip_path(params[:id]) %>
+<i class="fa fa-trash" aria-hidden="true"></i>
+<%= link_to "Supprimer le gossip", gossip_path(@gossip.id), method: "delete", data: { confirm: "Souhaitez-vous vraiment supprimer ce gossip?"}%>
  </div>
   </div>
